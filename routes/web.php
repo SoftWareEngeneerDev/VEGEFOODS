@@ -16,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-Route::get('/home','ClientController@home');
+// -------------------------- ROUTE FOR CLIENT CONTROLLER------------------------------
+Route::get('/home', 'ClientController@home');
+Route::get('/panier', 'ClientController@panier');
+Route::get('/client_login', 'ClientController@login');
+Route::get('/checkout', 'ClientController@checkout');
+Route::get('/signup', 'ClientController@signup');
