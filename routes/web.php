@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// -------------------------- ROUTE FOR ADMIN CONTROLLER------------------------------
+Route::get('/admin', 'AdminController@admin');
+
 // -------------------------- ROUTE FOR CLIENT CONTROLLER------------------------------
 Route::get('/home', 'ClientController@home');
 Route::get('/shop', 'ClientController@shop');
@@ -23,3 +26,13 @@ Route::get('/panier', 'ClientController@panier');
 Route::get('/client_login', 'ClientController@login');
 Route::get('/checkout', 'ClientController@checkout');
 Route::get('/signup', 'ClientController@signup');
+// -------------------------- ROUTE FOR PRODUCT CONTROLLER------------------------------
+Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
+Route::post('/sauverproduit', 'ProductController@sauverproduit');
+
+// -------------------------- ROUTE FOR CATEGORY CONTROLLER------------------------------
+Route::get('/ajoutercategorie', 'CategoryController@ajouterCategorie');
+Route::post('/sauvercategorie', 'CategoryController@sauvercategorie');
+// -------------------------- ROUTE FOR CLIENT SLISERS------------------------------
+Route::get('/ajouterslider', 'SliderController@ajouterslider');
+Route::post('/sauverslider', 'SliderController@sauverslider');
