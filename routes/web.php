@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 // -------------------------- ROUTE FOR ADMIN CONTROLLER------------------------------
 Route::get('/admin', 'AdminController@admin');
+Route::get('/commande', 'AdminController@commande');
 
 // -------------------------- ROUTE FOR CLIENT CONTROLLER------------------------------
 Route::get('/home', 'ClientController@home');
@@ -29,10 +30,14 @@ Route::get('/signup', 'ClientController@signup');
 // -------------------------- ROUTE FOR PRODUCT CONTROLLER------------------------------
 Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
+Route::get('/produit', 'ProductController@produit');
 
 // -------------------------- ROUTE FOR CATEGORY CONTROLLER------------------------------
 Route::get('/ajoutercategorie', 'CategoryController@ajouterCategorie');
 Route::post('/sauvercategorie', 'CategoryController@sauvercategorie');
+Route::get('/categorie', 'CategoryController@categorie');
+
 // -------------------------- ROUTE FOR CLIENT SLISERS------------------------------
 Route::get('/ajouterslider', 'SliderController@ajouterslider');
 Route::post('/sauverslider', 'SliderController@sauverslider');
+Route::get('/slider', 'SliderController@slider');

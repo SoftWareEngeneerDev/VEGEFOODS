@@ -15,4 +15,9 @@ class SliderController extends Controller
     public function sauverslider(Request $request)
     {
     }
+
+    public function slider()
+    {
+        return view('admin.slider');
+    }
 }

@@ -15,4 +15,9 @@ class ProductController extends Controller
     public function sauverproduit(Request $request)
     {
     }
+
+    public function produit()
+    {
+        return view('admin.produit');
+    }
 }
