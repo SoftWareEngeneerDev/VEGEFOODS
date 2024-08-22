@@ -20,12 +20,30 @@ class CategoryController extends Controller
         $categories = new Category();
         $categories->Category_name = $request->input('category_name');
         $categories->save();
-        return redirect('/ajoutercategorie')->with('status', 'La catégories ' . $categories->Category_name . ' a été 
+        return redirect('/ajoutercategorie')->with('status', 'La catégories ' . $categories->Category_name . ' a été
         ajouté avec succès');
     }
 
     public function categorie()
     {
-        return view('admin.categorie');
+        $categories = Category::get();
+
+        return view('admin.categorie')->with('categories', $categories);
+    }
+
+    public function edit_categorie($id)
+    {
+        $categories = Category::find($id);
+        return view('admin.edit_categorie')->with('categories', $categories);
+    }
+
+    public function sauvermodifcategorie(Request $request)
+    {
+        $categorie = new Category();
+        $categorie->Category_name = $request->input('categorie_name');
+        $categorie->save();
+
+        return view('admin.edit_categorie')->with('status', 'La categorie' . $categorie->Category_name . '
+        a été modifié avec succès');
     }
 }

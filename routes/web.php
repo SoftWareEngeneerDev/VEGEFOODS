@@ -36,6 +36,8 @@ Route::get('/produit', 'ProductController@produit');
 Route::get('/ajoutercategorie', 'CategoryController@ajouterCategorie');
 Route::post('/sauvercategorie', 'CategoryController@sauvercategorie');
 Route::get('/categorie', 'CategoryController@categorie');
+Route::get('/edit_categorie/{id}', 'CategoryController@edit_categorie');
+Route::post('/sauvermodifcategorie', 'CategoryController@sauvermodifcategorie');
 
 // -------------------------- ROUTE FOR CLIENT SLISERS------------------------------
 Route::get('/ajouterslider', 'SliderController@ajouterslider');

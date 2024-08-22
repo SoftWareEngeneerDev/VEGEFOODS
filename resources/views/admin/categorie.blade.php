@@ -14,21 +14,24 @@
                     <thead>
                         <tr>
                             <th>Order </th>
-                            <th>Nom de la Catégorie On</th>
+                            <th>Nom de la Catégorie</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Nom</td>
-                            {{--  <td>
-                            <label class="badge badge-info">On hold</label>
-                            </td>  --}}
-                            <td>
-                                <button class="btn btn-outline-primary">View</button>
-                            </td>
-                        </tr>
+                        @foreach ($categories as $categorie )
+                            <tr>
+                                <td>1</td>
+                                <td>{{ $categorie->Category_name }}</td>
+                                {{--  <td>
+                                <label class="badge badge-info">On hold</label>
+                                </td>  --}}
+                                <td>
+                                    <button onclick="window.location='{{ url('/edit_categorie/'.$categorie->id) }}'" class="btn btn-outline-primary">View</button>
+                                    <button class="btn btn-outline-danger">Delete</button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                     </table>
                 </div>
