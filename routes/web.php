@@ -31,6 +31,10 @@ Route::get('/signup', 'ClientController@signup');
 Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
 Route::get('/produit', 'ProductController@produit');
+Route::get('/edit_produit/{id}', 'ProductController@edit_produit');
+Route::post('/sauvermodifproduit', 'ProductController@sauvermodifproduit');
+Route::get('/supprimer_produit/{id}', 'ProductController@supprimer_produit');
+
 
 // -------------------------- ROUTE FOR CATEGORY CONTROLLER------------------------------
 Route::get('/ajoutercategorie', 'CategoryController@ajouterCategorie');
@@ -38,6 +42,7 @@ Route::post('/sauvercategorie', 'CategoryController@sauvercategorie');
 Route::get('/categorie', 'CategoryController@categorie');
 Route::get('/edit_categorie/{id}', 'CategoryController@edit_categorie');
 Route::post('/sauvermodifcategorie', 'CategoryController@sauvermodifcategorie');
+Route::get('/supprimercategorie/{id}', 'CategoryController@supprimercategorie');
 
 // -------------------------- ROUTE FOR CLIENT SLISERS------------------------------
 Route::get('/ajouterslider', 'SliderController@ajouterslider');

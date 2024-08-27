@@ -2,7 +2,7 @@
 @section('titre')
     Catégorie
 @endsection
-
+{{ Form::hidden('',$increment=1) }}
 @section('AdminContent')
         <div class="card">
             <div class="card-body">
@@ -11,6 +11,20 @@
                 <div class="col-12">
                 <div class="table-responsive">
                     <table id="order-listing" class="table">
+                    @if(Session::has('status'))
+                        <div class="alert alert-success">
+                            {{Session::get('status')}}
+                        </div>
+                    @endif
+                    @if(count($errors)>0)
+                        <ul>
+                            @foreach ($errors->all() as $error )
+                                <div class="alert alert-danger">
+                                    <li>{{ $error }}</li>
+                                </div>
+                            @endforeach
+                        </ul>
+                    @endif
                     <thead>
                         <tr>
                             <th>Order </th>
@@ -21,16 +35,17 @@
                     <tbody>
                         @foreach ($categories as $categorie )
                             <tr>
-                                <td>1</td>
+                                <td>{{ $increment }}</td>
                                 <td>{{ $categorie->Category_name }}</td>
                                 {{--  <td>
                                 <label class="badge badge-info">On hold</label>
                                 </td>  --}}
                                 <td>
                                     <button onclick="window.location='{{ url('/edit_categorie/'.$categorie->id) }}'" class="btn btn-outline-primary">View</button>
-                                    <button class="btn btn-outline-danger">Delete</button>
+                                    <a class="btn btn-outline-danger" id="delete" href="{{ url('/supprimercategorie/'.$categorie->id) }}">Delete</a>
                                 </td>
                             </tr>
+                            {{ Form::hidden('',$increment=$increment+1) }}
                         @endforeach
                     </tbody>
                     </table>

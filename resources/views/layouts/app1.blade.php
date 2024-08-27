@@ -74,8 +74,8 @@
     {{--  End contenu  --}}
 
        @include('include.footer')
-  
-  
+
+
     <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
     <script src="{{ asset('frontend/js/jquery-migrate-3.0.1.min.js') }}"></script>
     <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
@@ -92,7 +92,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ asset('frontend/js/google-map.js') }}"></script>
     <script src="{{ asset('frontend/js/main.js') }}"></script>
+
     @yield('script')
-  
+
     </body>
 </html>

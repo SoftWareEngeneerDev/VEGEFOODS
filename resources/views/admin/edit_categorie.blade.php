@@ -9,7 +9,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Editer Catégorie</h4>
-                  {{--  @if(Session::has('status'))
+                  @if(Session::has('status'))
                     <div class="alert alert-success">
                         {{Session::get('status')}}
                     </div>
@@ -22,28 +22,18 @@
                             </div>
                         @endforeach
                     </ul>
-                  @endif  --}}
-                    {!! Form::open(['action'=>'CategoryController@sauvermodifcategorie','method'=>'POST', 'class'=>'cmxform',
-                    'id'=>'commentForm' ]) !!}
+                  @endif
+                {!! Form::open(['action'=>['CategoryController@sauvermodifcategorie',
+                        $categories->id], 'method'=>'POST', 'class'=>'cmxform',
+                      'id'=>'commentForm' ]) !!}
                       {{ csrf_field() }}
                       <div class="form-group">
-                        {!! Form::label('','Nom de la Catégorie',['for'=>'cname']) !!}
-                        {!! Form::text('category_name',$categories->Category_name,['class'=>'form-control', 'id'=>'cname']) !!}
+                        {{ Form::hidden('id',$categories->id) }}
+                        {{ Form::label('','Nom de la Catégorie',['for'=>'cname']) }}
+                        {{ Form::text('category_name',$categories->Category_name,
+                         ['class'=>'form-control', 'id'=>'cname']) }}
                       </div>
-                      {{--  <div class="form-group">
-                        <label for="cemail">E-Mail (required)</label>
-                        <input id="cemail" class="form-control" type="email" name="email" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="curl">URL (optional)</label>
-                        <input id="curl" class="form-control" type="url" name="url">
-                      </div>
-                      <div class="form-group">
-                        <label for="ccomment">Your comment (required)</label>
-                        <textarea id="ccomment" class="form-control" name="comment" required></textarea>
-                      </div>  --}}
-                      {{--  <input class="btn btn-primary" type="submit" value="Submit">  --}}
-                    {!! Form::submit('Modifier',['class'=>'btn btn-primary']) !!}
+                    {{ Form::submit('Modifier', ['class'=>'btn btn-primary']) }}
                 {!! Form::close() !!}
                 </div>
               </div>
