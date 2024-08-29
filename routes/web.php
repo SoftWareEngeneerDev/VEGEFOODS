@@ -48,3 +48,6 @@ Route::get('/supprimercategorie/{id}', 'CategoryController@supprimercategorie');
 Route::get('/ajouterslider', 'SliderController@ajouterslider');
 Route::post('/sauverslider', 'SliderController@sauverslider');
 Route::get('/slider', 'SliderController@slider');
+Route::get('/edit_slider/{id}', 'SliderController@edit_slider');
+Route::post('/sauvermodifslider', 'SliderController@sauvermodifslider');
+Route::get('/supprimerslider/{id}', 'SliderController@supprimerslider');

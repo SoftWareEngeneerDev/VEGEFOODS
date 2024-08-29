@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\Category;
 // use App\Http\Controllers\validate;
@@ -77,7 +77,7 @@ class ProductController extends Controller
     public function sauvermodifproduit(Request $request)
     {
         $this->validate($request, [
-            'product_name' => 'required |unique:products',
+            'product_name' => 'required',
             'product_price' => 'required',
             'product_category' => 'required',
             'product_image' => 'image|nullable|max:1999'
@@ -85,6 +85,7 @@ class ProductController extends Controller
 
 
         $produit = Product::find($request->input('id'));
+
         $produit->Product_name = $request->input('product_name');
         $produit->Product_price = $request->input('product_price');
         $produit->Product_category = $request->input('product_category');
@@ -103,15 +104,15 @@ class ProductController extends Controller
             $path = $request->file('product_image')->storeAs('public/Product_images', $ImageNametoStore);
 
             if ($produit->Product_image != 'noimage.jpg') {
-                Storage::delete('public/Product_images'.$produit->Product_image);
-
-            $produit->Product_image=$ImageNametoStore;
+                Storage::delete('public/Product_images' . $produit->Product_image);
+            }
+            $produit->Product_image = $ImageNametoStore;
         }
 
         $produit->update();
 
-        return redirect('/ajouterproduit')->with('status', 'Le produit ' . $produit->Product_name . ' a été modifié
-        avec succès');
+        return redirect('/produit')->with('status', 'Le produit ' . $produit->Product_name .
+            ' a été modifié avec succès');
     }
 
     public function supprimer_produit($id)

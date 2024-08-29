@@ -52,8 +52,9 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ url('/edit_produit/'.$produit->id) }}" class="btn btn-outline-primary">View</a>
-                                            {{--  <button onclick="window.location='{{ url('/edit_produit/'.$produit->id) }}'" class="btn btn-outline-primary">View</button>  --}}
+                                            {{--  <a href="{{ url('/edit_produit/'.$produit->id) }}" class="btn btn-outline-primary">View</a>  --}}
+                                            <button onclick="window.location='{{ url('/edit_produit/'.$produit->id) }}'"
+                                                class="btn btn-outline-primary">View</button>
                                             {{--  <button class="btn btn-outline-danger">Delete</button>  --}}
                                             <a href="{{ url('/supprimer_produit/'.$produit->id) }}" class="btn btn-outline-danger" id="delete">Delete</a>
                                         </td>

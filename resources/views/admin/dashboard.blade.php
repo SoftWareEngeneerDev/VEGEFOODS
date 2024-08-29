@@ -4,7 +4,6 @@
 @endsection
 @section('AdminContent')
 <!-- partial -->
-      <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin">
@@ -47,7 +46,7 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-warning">2.00% <span class="text-body ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -59,7 +58,7 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">47033</h3>
                     <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-danger">0.22% <span class="text-body ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -71,7 +70,7 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">40016</h3>
                     <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-success">10.00%<span class="text-body ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -83,7 +82,7 @@
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3>
                     <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-success">22.00%<span class="text-body ml-1"><small>(30 days)</small></span></p>
                 </div>
               </div>
@@ -113,7 +112,7 @@
                                   <div class="d-flex align-items-center">
                                     <i class="ti-angle-down mr-2"></i>
                                     <h5 class="mb-0">0.036%</h5>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                               </div>
@@ -134,7 +133,7 @@
                                   <div class="d-flex align-items-center">
                                     <i class="ti-angle-down mr-2"></i>
                                     <h5 class="mb-0">2.036%</h5>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                               </div>
@@ -155,7 +154,7 @@
                                   <div class="d-flex align-items-center">
                                     <i class="ti-angle-down mr-2"></i>
                                     <h5 class="mb-0">35.54%</h5>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                               </div>
@@ -180,7 +179,7 @@
                                   <div class="d-flex align-items-center">
                                     <i class="ti-angle-down mr-2"></i>
                                     <h5 class="mb-0">0.048%</h5>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                               </div>
@@ -201,7 +200,7 @@
                                   <div class="d-flex align-items-center">
                                     <i class="ti-angle-down mr-2"></i>
                                     <h5 class="mb-0">5.962%</h5>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                               </div>
@@ -222,7 +221,7 @@
                                   <div class="d-flex align-items-center">
                                     <i class="ti-angle-down mr-2"></i>
                                     <h5 class="mb-0">78.02%</h5>
-                                  </div>  
+                                  </div>
                                 </div>
                                 <p class="text-white font-weight-light pr-lg-2 pr-xl-5">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                               </div>
@@ -246,7 +245,7 @@
           </div>
         </div>
 
-        <!-- content-wrapper ends -->
+        {{--  <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -254,9 +253,9 @@
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
         </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
+        <!-- partial -->  --}}
+
+    <!-- main-panel ends -->
 @endsection
 
 @section('scripts')
