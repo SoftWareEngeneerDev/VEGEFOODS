@@ -123,4 +123,19 @@ class ProductController extends Controller
         return redirect('/produit')->with('status', 'Le produit ' . $produit->Product_name . ' a été supprimé
         avec succès!');
     }
+
+    public function activer_produit($id)
+    {
+        $produit = Product::find($id);
+        $produit->status = 1;
+        $produit->update();
+        return redirect('/produit')->with('status', 'Le produit ' . $produit->Product_name . ' a été activé avec succès');
+    }
+    public function desactiver_produit($id)
+    {
+        $produit = Product::find($id);
+        $produit->status = 0;
+        $produit->update();
+        return redirect('/produit')->with('status', 'Le produit ' . $produit->Product_name . ' a été desactivé avec succès');
+    }
 }

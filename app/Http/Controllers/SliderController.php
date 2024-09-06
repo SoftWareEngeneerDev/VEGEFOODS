@@ -43,7 +43,7 @@ class SliderController extends Controller
 
         $slider->save();
 
-        return redirect('/ajouterslider')->with('status', 'Le slider ' . $SliderNameTostore . ' 
+        return redirect('/ajouterslider')->with('status', 'Le slider ' . $SliderNameTostore . '
         à été ajouté avec succès');
     }
 
@@ -94,5 +94,22 @@ class SliderController extends Controller
         $slider = Slider::find($id);
         $slider->delete();
         return redirect('/slider')->with('status', 'Le slider a été supprimé avec succès!');
+    }
+
+    public function desactiver_slider($id)
+    {
+        $slider = Slider::find($id);
+        $slider->status = 0;
+        $slider->update();
+
+        return redirect('/slider')->with('status', 'Le slider a été desactivé avec succès');
+    }
+    public function activer_slider($id)
+    {
+        $slider = Slider::find($id);
+        $slider->status = 1;
+        $slider->update();
+
+        return redirect('/slider')->with('status', 'Le slider a été activé avec succès');
     }
 }

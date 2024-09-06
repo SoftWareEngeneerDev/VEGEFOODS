@@ -12,6 +12,7 @@
           </div>
         </li>
       </ul>
+      <h3 class="text-center">Espace Administrateur | Vegefoods</h3>
       <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">

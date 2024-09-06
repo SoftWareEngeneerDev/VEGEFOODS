@@ -21,19 +21,23 @@ Route::get('/admin', 'AdminController@admin');
 Route::get('/commande', 'AdminController@commande');
 
 // -------------------------- ROUTE FOR CLIENT CONTROLLER------------------------------
-Route::get('/home', 'ClientController@home');
+Route::get('/', 'ClientController@home');
 Route::get('/shop', 'ClientController@shop');
 Route::get('/panier', 'ClientController@panier');
 Route::get('/client_login', 'ClientController@login');
 Route::get('/checkout', 'ClientController@checkout');
 Route::get('/signup', 'ClientController@signup');
+Route::get('/select_par_category/{name}', 'ClientController@select_par_category');
 // -------------------------- ROUTE FOR PRODUCT CONTROLLER------------------------------
+
 Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
 Route::get('/produit', 'ProductController@produit');
 Route::get('/edit_produit/{id}', 'ProductController@edit_produit');
 Route::post('/sauvermodifproduit', 'ProductController@sauvermodifproduit');
 Route::get('/supprimer_produit/{id}', 'ProductController@supprimer_produit');
+Route::get('/activer_produit/{id}', 'ProductController@activer_produit');
+Route::get('/desactiver_produit/{id}', 'ProductController@desactiver_produit');
 
 
 // -------------------------- ROUTE FOR CATEGORY CONTROLLER------------------------------
@@ -51,3 +55,5 @@ Route::get('/slider', 'SliderController@slider');
 Route::get('/edit_slider/{id}', 'SliderController@edit_slider');
 Route::post('/sauvermodifslider', 'SliderController@sauvermodifslider');
 Route::get('/supprimerslider/{id}', 'SliderController@supprimerslider');
+Route::get('/desactiver_slider/{id}', 'SliderController@desactiver_slider');
+Route::get('/activer_slider/{id}', 'SliderController@activer_slider');

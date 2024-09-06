@@ -5,41 +5,28 @@
 @endsection
 
 @section('contenu')
-        <section id="home-section" class="hero">
-            <div class="home-slider owl-carousel">
-            <div class="slider-item" style="background-image: url(frontend/images/bg_1.jpg);">
-                <div class="overlay"></div>
-            <div class="container">
-                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+    <section id="home-section" class="hero">
+        <div class="home-slider owl-carousel">
+            @foreach ($sliders as $slider )
+                <div class="slider-item" style="background-image: url(storage/Slider_images/{{ $slider->slider_image }});">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
-                <div class="col-md-12 ftco-animate text-center">
-                    <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
-                    <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                    <p><a href="#" class="btn btn-primary">View Details</a></p>
+                        <div class="col-md-12 ftco-animate text-center">
+                            <h1 class="mb-2">{{ $slider->description1 }}</h1>
+                            <h2 class="subheading mb-4">{{ $slider->description2 }}</h2>
+                            <p><a href="#" class="btn btn-primary">View Details</a></p>
+                        </div>
+
+                        </div>
+                    </div>
                 </div>
-
-                </div>
-            </div>
-            </div>
-
-            <div class="slider-item" style="background-image: url(frontend/images/bg_2.jpg);">
-                <div class="overlay"></div>
-            <div class="container">
-                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-                <div class="col-sm-12 ftco-animate text-center">
-                    <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
-                    <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                    <p><a href="#" class="btn btn-primary">View Details</a></p>
-                </div>
-
-                </div>
-            </div>
-            </div>
+            @endforeach
         </div>
-        </section>
+    </section>
 
-        <section class="ftco-section">
+    <section class="ftco-section">
         <div class="container">
             <div class="row no-gutters ftco-services">
                 <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
@@ -88,7 +75,7 @@
                 </div>
             </div>
         </div>
-        </section>
+    </section>
 
         <section class="ftco-section ftco-category ftco-no-pt">
             <div class="container">
@@ -135,19 +122,19 @@
             </div>
         </section>
 
-        <section class="ftco-section">
+    <section class="ftco-section">
         <div class="container">
-                <div class="row justify-content-center mb-3 pb-3">
-            <div class="col-md-12 heading-section text-center ftco-animate">
-                <span class="subheading">Featured Products</span>
-            <h2 class="mb-4">Our Products</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <div class="row justify-content-center mb-3 pb-3">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                        <span class="subheading">Featured Products</span>
+                    <h2 class="mb-4">Nos Produits</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                </div>
             </div>
-        </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-3 ftco-animate">
+                {{--  <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod"><img class="img-fluid" src="frontend/images/product-1.jpg" alt="Colorlib Template">
                             <span class="status">30%</span>
@@ -175,36 +162,40 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="frontend/images/product-2.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 pb-4 px-3 text-center">
-                            <h3><a href="#">Strawberry</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>$120.00</span></p>
+                </div>  --}}
+                @foreach ($products as $product )
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="product">
+                            <a href="#" class="img-prod"><img class="img-fluid" src="{{ url('storage/Product_images/'.$product->Product_image) }}" alt="Colorlib Template">
+                                <span class="status">30%</span>
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text py-3 pb-4 px-3 text-center">
+                                <h3><a href="#">{{ $product->Product_name }}</a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="mr-2 price-dc">200.00CFA</span><span>{{ $product->Product_price }} CFA</span></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="bottom-area d-flex px-3">
-                                <div class="m-auto d-flex">
-                                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                        <span><i class="ion-ios-menu"></i></span>
-                                    </a>
-                                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                        <span><i class="ion-ios-cart"></i></span>
-                                    </a>
-                                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                        <span><i class="ion-ios-heart"></i></span>
-                                    </a>
+                                <div class="bottom-area d-flex px-3">
+                                    <div class="m-auto d-flex">
+                                        <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                            <span><i class="ion-ios-menu"></i></span>
+                                        </a>
+                                        <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                            <span><i class="ion-ios-cart"></i></span>
+                                        </a>
+                                        <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                                            <span><i class="ion-ios-heart"></i></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 ftco-animate">
+                @endforeach
+                
+                {{--  <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="#" class="img-prod"><img class="img-fluid" src="frontend/images/product-3.jpg" alt="Colorlib Template">
                             <div class="overlay"></div>
@@ -374,29 +365,29 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
             </div>
         </div>
-        </section>
+    </section>
 
         <section class="ftco-section img" style="background-image: url(frontend/images/bg_3.jpg);">
-        <div class="container">
+            <div class="container">
                 <div class="row justify-content-end">
-            <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-                <span class="subheading">Best Price For You</span>
-            <h2 class="mb-4">Deal of the day</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <h3><a href="#">Spinach</a></h3>
-            <span class="price">$10 <a href="#">now $5 only</a></span>
-            < id="timer" class="d-flex mt-5">
-                <div class="time" id="days"></div>
-                <div class="time pl-3" id="hours"></div>
-                <div class="time pl-3" id="minutes"></div>
-                <div class="time pl-3" id="seconds"></div>
-        </          div>
+                    <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+                        <span class="subheading">Best Price For You</span>
+                    <h2 class="mb-4">Deal of the day</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                    <h3><a href="#">Spinach</a></h3>
+                    <span class="price">$10 <a href="#">now $5 only</a></span>
+                    <div id="timer" class="d-flex mt-5">
+                        <div class="time" id="days"></div>
+                        <div class="time pl-3" id="hours"></div>
+                        <div class="time pl-3" id="minutes"></div>
+                        <div class="time pl-3" id="seconds"></div>
+                    </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
         </section>
 
         <section class="ftco-section testimony-section">

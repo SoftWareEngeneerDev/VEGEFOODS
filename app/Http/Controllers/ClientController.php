@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
 
 class ClientController extends Controller
 {
     //
     public function home()
     {
-        return view('client.home');
+        $sliders = Slider::get()->where('status', 1);
+        $products = Product::get()->where('status', 1);
+
+        return view('client.home')->with('sliders', $sliders)->with('products', $products);
     }
     public function login()
     {
@@ -21,7 +27,17 @@ class ClientController extends Controller
     }
     public function shop()
     {
-        return view('client.shop');
+        $produits = Product::get()->where('status', 1);
+        $categories = Category::get();
+        return view('client.shop')->with('produits', $produits)->with('categories', $categories);
+    }
+
+    public function select_par_category($name)
+    {
+        $categories = Category::get();
+        $produits = Product::where('Product_category', $name)->where('status', 1)->get();
+
+        return view('client.shop')->with('produits', $produits)->with('categories', $categories);
     }
     public function checkout()
     {

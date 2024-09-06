@@ -57,6 +57,11 @@
                                                 class="btn btn-outline-primary">View</button>
                                             {{--  <button class="btn btn-outline-danger">Delete</button>  --}}
                                             <a href="{{ url('/supprimer_produit/'.$produit->id) }}" class="btn btn-outline-danger" id="delete">Delete</a>
+                                            @if($produit->status == 1)
+                                                <button onclick="window.location='{{ url('/desactiver_produit/'.$produit->id) }}'" class="btn btn-outline-warning">Désactivé</button>
+                                            @else
+                                                <button onclick="window.location='{{ url('/activer_produit/'.$produit->id) }}'" class="btn btn-outline-success">Activé</button>
+                                            @endif
                                         </td>
                                     </tr>
                                     {{ Form::hidden('',$increment=$increment +1) }}

@@ -2,6 +2,7 @@
 @section('titre')
     Slider
 @endsection
+{{  Form::hidden('', $increment=1) }}
 
 @section('AdminContent')
         <div class="card">
@@ -38,13 +39,13 @@
                         <tbody>
                             @foreach ($sliders as $slider)
                                 <tr>
-                                    <td>1</td>
+                                    <td>{{ $increment }}</td>
                                     <td><img src="{{ asset('/storage/Slider_images/'.$slider->slider_image) }}" alt=""></td>
                                     <td>{{ $slider->description1 }}</td>
                                     <td>{{ $slider->description2 }}</td>
                                     <td>
-                                        @if( $slider->status=1 )
-                                            <label class="badge badge-success">Actuvé</label>
+                                        @if( $slider->status == 1 )
+                                            <label class="badge badge-success">Activé</label>
                                         @else
                                             <label class="badge badge-danger">Désactivé</label>
                                         @endif
@@ -53,8 +54,15 @@
                                         <button onclick="window.location='{{ url('/edit_slider/'.$slider->id) }}'" class="btn btn-outline-primary">View</button>
                                         <a href="{{ url('/supprimerslider/'.$slider->id) }}" class="btn btn-outline-danger" id="delete">Delete</a>
                                         {{--  <button class="btn btn-outline-danger">Delete</button>  --}}
+                                    @if($slider->status == 1)
+                                        <button onclick="window.location='{{ url('/desactiver_slider/'.$slider->id) }}'" class="btn btn-outline-warning">Désactivé</button>
+                                    @else
+                                        <button onclick="window.location='{{ url('/activer_slider/'.$slider->id) }}'" class="btn btn-outline-success">Activé</button>
+                                    @endif
                                     </td>
+
                                 </tr>
+                                {{  Form::hidden('', $increment=$increment+1) }}
                             @endforeach
 
                         </tbody>
